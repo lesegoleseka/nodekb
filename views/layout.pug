@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title knowledgebase
+    title Knowledgebase
     link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
     link(rel='stylesheet' href='/css/style.css')
   body
@@ -21,8 +21,12 @@ html
             li
               a(href='/articles/add') Add Article
           ul.nav.navbar-nav.navbar-right
-            li
-              a(href='/users/register') Register
+            if user
+              li
+                a(href='/users/logout') Logout
+            else
+              li
+                a(href='/users/register') Register
               li
                 a(href='/users/login') Login
     .container
